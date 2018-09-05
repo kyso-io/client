@@ -1,6 +1,6 @@
 {
   "name": "@kyso/api",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "description": "Javascript library for the kyso api",
   "main": "index.js",
   "scripts": {
