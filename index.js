@@ -1,7 +1,10 @@
 const handleRequest = require('./handle-request')
 
+const kyso = {}
+module.exports = kyso
+
 // Auth & Profile
-export const login = async ({ email, password, apiUrl }) =>
+kyso.login = async ({ email, password, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: `/parse/login?username=${email}&password=${password}`,
@@ -12,7 +15,7 @@ export const login = async ({ email, password, apiUrl }) =>
     returnRaw: true
   })
 
-export const getMe = async ({ token, apiUrl }) =>
+kyso.getMe = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: `/parse/users/me`,
@@ -24,7 +27,7 @@ export const getMe = async ({ token, apiUrl }) =>
     returnRaw: true
   })
 
-export const signup = async ({ userData, apiUrl }) =>
+kyso.signup = async ({ userData, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: `/parse/users`,
@@ -36,7 +39,7 @@ export const signup = async ({ userData, apiUrl }) =>
     returnRaw: true
   })
 
-export const checkNameUniqueness = async ({ name, apiUrl }) =>
+kyso.checkNameUniqueness = async ({ name, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/check-name-uniqueness',
@@ -46,7 +49,7 @@ export const checkNameUniqueness = async ({ name, apiUrl }) =>
     }
   })
 
-export const getAuth0User = async ({ email, apiUrl }) =>
+kyso.getAuth0User = async ({ email, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-auth0-user',
@@ -56,7 +59,7 @@ export const getAuth0User = async ({ email, apiUrl }) =>
     }
   })
 
-export const linkAuth0Accounts = async ({ token, user_id, apiUrl }) =>
+kyso.linkAuth0Accounts = async ({ token, user_id, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/link-auth0-accounts',
@@ -66,7 +69,7 @@ export const linkAuth0Accounts = async ({ token, user_id, apiUrl }) =>
     }
   })
 
-export const setNickname = async ({ token, nickname, apiUrl }) =>
+kyso.setNickname = async ({ token, nickname, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/set-nickname',
@@ -77,7 +80,7 @@ export const setNickname = async ({ token, nickname, apiUrl }) =>
     }
   })
 
-export const uploadProfilePicture = async ({ token, data, apiUrl }) =>
+kyso.uploadProfilePicture = async ({ token, data, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/upload-profile-picture',
@@ -88,7 +91,7 @@ export const uploadProfilePicture = async ({ token, data, apiUrl }) =>
 
 // Containers
 
-export const getContainer = async ({ token, proxyUrl, containerId, apiUrl }) =>
+kyso.getContainer = async ({ token, proxyUrl, containerId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-container',
@@ -99,7 +102,7 @@ export const getContainer = async ({ token, proxyUrl, containerId, apiUrl }) =>
     }
   })
 
-export const getContainers = async ({ token, apiUrl }) =>
+kyso.getContainers = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-containers',
@@ -107,7 +110,7 @@ export const getContainers = async ({ token, apiUrl }) =>
     token
   })
 
-export const getRunningContainers = async ({ token, apiUrl }) =>
+kyso.getRunningContainers = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-running-containers',
@@ -115,7 +118,7 @@ export const getRunningContainers = async ({ token, apiUrl }) =>
     token
   })
 
-export const updateContainerActivity = async ({ token, proxyUrl, lastActivity, apiUrl }) =>
+kyso.updateContainerActivity = async ({ token, proxyUrl, lastActivity, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/update-container-activity',
@@ -126,7 +129,7 @@ export const updateContainerActivity = async ({ token, proxyUrl, lastActivity, a
 
 // Email
 
-export const feedback = async ({ token, text, apiUrl }) =>
+kyso.feedback = async ({ token, text, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/feedback',
@@ -139,7 +142,7 @@ export const feedback = async ({ token, text, apiUrl }) =>
 
 // Github
 
-export const getGithubRepositories = async ({ token, apiUrl }) =>
+kyso.getGithubRepositories = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-github-repositories',
@@ -147,7 +150,7 @@ export const getGithubRepositories = async ({ token, apiUrl }) =>
     token
   })
 
-export const importGithubRepository = async ({ token, repo, main, branch, apiUrl }) =>
+kyso.importGithubRepository = async ({ token, repo, main, branch, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/import-github-repository',
@@ -157,7 +160,7 @@ export const importGithubRepository = async ({ token, repo, main, branch, apiUrl
   })
 
 
-export const createComment = async ({ token, text, studyId, parentId, apiUrl }) =>
+kyso.createComment = async ({ token, text, studyId, parentId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/create-comment',
@@ -167,7 +170,7 @@ export const createComment = async ({ token, text, studyId, parentId, apiUrl }) 
   })
 
 
-export const getComments = async ({ studyId, parentId, apiUrl }) =>
+kyso.getComments = async ({ studyId, parentId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-comments',
@@ -178,15 +181,15 @@ export const getComments = async ({ studyId, parentId, apiUrl }) =>
 
 // Studies
 
-export const createVersion = async () => {
+kyso.createVersion = async () => {
   throw new Error('Use the @kyso/publish library for creating versions')
 }
 
-export const createStudy = async () => {
+kyso.createStudy = async () => {
   throw new Error('Use the @kyso/publish library for creating studies')
 }
 
-export const addTags = async ({ token, studyId, tags, apiUrl }) =>
+kyso.addTags = async ({ token, studyId, tags, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/add-tags',
@@ -195,7 +198,7 @@ export const addTags = async ({ token, studyId, tags, apiUrl }) =>
     body: { studyId, tags }
   })
 
-export const checkVersionExists = async ({ token, name, versionSha, apiUrl }) =>
+kyso.checkVersionExists = async ({ token, name, versionSha, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/check-version-exists',
@@ -204,7 +207,7 @@ export const checkVersionExists = async ({ token, name, versionSha, apiUrl }) =>
     body: { name, versionSha }
   })
 
-export const deleteStudy = async ({ token, studyId, apiUrl }) =>
+kyso.deleteStudy = async ({ token, studyId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/delete-study',
@@ -213,7 +216,7 @@ export const deleteStudy = async ({ token, studyId, apiUrl }) =>
     body: { studyId }
   })
 
-export const getExploreStudies = async () =>
+kyso.getExploreStudies = async () =>
   handleRequest({
     apiUrl,
     url: '/get-explore-studies',
@@ -221,7 +224,7 @@ export const getExploreStudies = async () =>
   })
 
 
-export const getMainFile = async ({ versionId, apiUrl }) => {
+kyso.getMainFile = async ({ versionId, apiUrl }) => {
   handleRequest({
     apiUrl,
     url: '/check-version-exists',
@@ -230,7 +233,7 @@ export const getMainFile = async ({ versionId, apiUrl }) => {
   })
 }
 
-export const getStudy = async ({ token, author, name, limit, sha, apiUrl }) =>
+kyso.getStudy = async ({ token, author, name, limit, sha, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-study',
@@ -239,7 +242,7 @@ export const getStudy = async ({ token, author, name, limit, sha, apiUrl }) =>
     body: { author, name, limit, sha }
   })
 
-export const getStudies = async ({ token, apiUrl }) =>
+kyso.getStudies = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-studies',
@@ -247,7 +250,7 @@ export const getStudies = async ({ token, apiUrl }) =>
     token,
   })
 
-export const getVersion = async ({ token, versionId, apiUrl }) =>
+kyso.getVersion = async ({ token, versionId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-version',
@@ -256,7 +259,7 @@ export const getVersion = async ({ token, versionId, apiUrl }) =>
     body: { versionId }
   })
 
-export const incrementViews = async ({ studyId, apiUrl }) =>
+kyso.incrementViews = async ({ studyId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/increment-views',
@@ -264,7 +267,7 @@ export const incrementViews = async ({ studyId, apiUrl }) =>
     body: { studyId }
   })
 
-export const toggleStar = async ({ token, studyId, apiUrl }) =>
+kyso.toggleStar = async ({ token, studyId, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/toggle-star',
@@ -273,7 +276,7 @@ export const toggleStar = async ({ token, studyId, apiUrl }) =>
     body: { studyId }
   })
 
-export const togglePrivate = async ({ token, studyId, privacy, apiUrl }) =>
+kyso.togglePrivate = async ({ token, studyId, privacy, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/toggle-private',
