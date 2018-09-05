@@ -24,13 +24,6 @@ const kyso = require('@kyso/api')
 const studies = await kyso.getStudies({ token: user.sessionToken })
 ```
 
-You can also set `kyso.API_URL` to whatever you want, but it defaults
-to `https://api.kyso.io`, eg:
-
-```javascript
-kyso.API_URL = 'https://staging.api.kyso.io'
-```
-
 Set the auth token for each call using `token: user.sessionToken`
 
 ### Auth & Profile
