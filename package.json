@@ -1,13 +1,21 @@
 {
   "name": "@kyso/api",
   "version": "3.2.1",
-  "description": "Kyso API Client",
-  "private": false,
-  "author": "Eoin Murray",
+  "description": "Javascript library for the kyso api",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyso-io/kyso-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyso-io/kyso-client/issues"
+  },
+  "homepage": "https://github.com/kyso-io/kyso-client#readme",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
   }

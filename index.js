@@ -1,5 +1,6 @@
 const handleRequest = require('./handle-request')
-
+// "name": "@kyso/api",
+// "version": "3.2.1",
 // Auth & Profile
 export const login = async ({ email, password, apiUrl }) =>
   handleRequest({
