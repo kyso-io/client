@@ -22,7 +22,8 @@ kyso.getMe = async ({ token, apiUrl }) =>
     method: 'get',
     token,
     headers: {
-      'X-Parse-Application-Id': 'api-kyso-io'
+      'X-Parse-Application-Id': 'api-kyso-io',
+      'X-Parse-Session-Token': token
     },
     returnRaw: true
   })
