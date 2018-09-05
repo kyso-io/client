@@ -13,7 +13,7 @@ module.exports = async ({
   const opts = {
     method,
     headers: {
-      'content/type': 'application/json'
+      'content-type': 'application/json'
     }
   }
 
@@ -36,7 +36,6 @@ module.exports = async ({
   }
 
   const _url = `${apiUrl}${url}`
-  console.log(_url, JSON.stringify(opts, null, 2))
   const response = await fetch(_url, opts)
 
   if (returnRaw) {
