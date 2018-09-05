@@ -1,6 +1,5 @@
 const handleRequest = require('./handle-request')
-// "name": "@kyso/api",
-// "version": "3.2.1",
+
 // Auth & Profile
 export const login = async ({ email, password, apiUrl }) =>
   handleRequest({
@@ -9,7 +8,8 @@ export const login = async ({ email, password, apiUrl }) =>
     method: 'get',
     headers: {
       'X-Parse-Application-Id': 'api-kyso-io'
-    }
+    },
+    returnRaw: true
   })
 
 export const getMe = async ({ token, apiUrl }) =>
@@ -20,7 +20,8 @@ export const getMe = async ({ token, apiUrl }) =>
     token,
     headers: {
       'X-Parse-Application-Id': 'api-kyso-io'
-    }
+    },
+    returnRaw: true
   })
 
 export const signup = async ({ userData, apiUrl }) =>
@@ -31,7 +32,8 @@ export const signup = async ({ userData, apiUrl }) =>
     body: userData,
     headers: {
       'X-Parse-Application-Id': 'api-kyso-io'
-    }
+    },
+    returnRaw: true
   })
 
 export const checkNameUniqueness = async ({ name, apiUrl }) =>
