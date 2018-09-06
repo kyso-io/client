@@ -109,6 +109,11 @@ Set the auth token for each call using `token: user.sessionToken`
     const studies = await kyso.getStudies({ token, apiUrl })
   ```
 
+- `getStudiesByAuthor`
+  ```javascript
+    const studies = await kyso.getStudiesByAuthor({ author, apiUrl })
+  ```
+
 - `getStudy`
   ```javascript
     const study = await kyso.getStudy({ token, author, name, limit, sha, apiUrl })

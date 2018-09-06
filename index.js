@@ -251,6 +251,14 @@ kyso.getStudies = async ({ token, apiUrl }) =>
     token,
   })
 
+kyso.getStudiesByAuthor = async ({ author, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/get-studies-by-author',
+    method: 'post',
+    body: { author },
+  })
+
 kyso.getVersion = async ({ token, versionId, apiUrl }) =>
   handleRequest({
     apiUrl,
