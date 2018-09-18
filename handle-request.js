@@ -10,6 +10,13 @@ module.exports = async ({
   returnRaw = false,
   apiUrl = 'https://api.kyso.io'
 }) => {
+
+  if (typeof process !== "undefined") {
+    if (process && process.env && process.env.API_URL) {
+      apiUrl = process.env.API_URL
+    }
+  }
+
   const opts = {
     method,
     headers: {
