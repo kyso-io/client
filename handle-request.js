@@ -51,7 +51,8 @@ module.exports = async ({
 
   if (response.ok) {
     try {
-      return response.json()
+      const json = await response.json()
+      return json
     } catch (e) {
       return null
     }
