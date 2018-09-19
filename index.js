@@ -225,12 +225,13 @@ kyso.getExploreStudies = async () =>
   })
 
 
-kyso.getMainFile = async ({ versionId, apiUrl }) => {
+kyso.getMainFile = async ({ versionId, token = null, apiUrl }) => {
   handleRequest({
     apiUrl,
-    url: '/check-version-exists',
+    url: '/get-main-file',
     method: 'post',
-    body: { versionId }
+    body: { versionId },
+    token,
   })
 }
 
