@@ -204,7 +204,6 @@ kyso.getTagSuggestions = async ({ apiUrl }) =>
     apiUrl,
     url: '/get-tag-suggestions',
     method: 'post',
-    token,
   })
 
 
