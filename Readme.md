@@ -83,6 +83,11 @@ Set the auth token for each call using `token: user.sessionToken`
     await kyso.addTags({ token, studyId, tags, apiUrl })
   ```
 
+- `getTagSuggestions`
+```javascript
+  await kyso.getTagSuggestions({ apiUrl })
+```
+
 - `checkVersionExists`
   ```javascript
     const { exists } = await kyso.checkVersionExists({ token, name, versionSha, apiUrl })

@@ -199,6 +199,15 @@ kyso.addTags = async ({ token, studyId, tags, apiUrl }) =>
     body: { studyId, tags }
   })
 
+kyso.getTagSuggestions = async ({ apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/get-tag-suggestions',
+    method: 'post',
+    token,
+  })
+
+
 kyso.checkVersionExists = async ({ token, name, versionSha, apiUrl }) =>
   handleRequest({
     apiUrl,
