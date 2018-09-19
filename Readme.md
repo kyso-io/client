@@ -137,7 +137,7 @@ Set the auth token for each call using `token: user.sessionToken`
 
 - `togglePrivate`
   ```javascript
-    const study = await togglePrivate({ token, studyId, apiUrl })
+    const study = await togglePrivate({ token, studyId, privacy, apiUrl })
   ```
 
 - `toggleStar`

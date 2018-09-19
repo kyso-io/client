@@ -50,7 +50,11 @@ module.exports = async ({
   }
 
   if (response.ok) {
-    return response.json()
+    try {
+      return response.json()
+    } catch (e) {
+      return null
+    }
   }
   return response.text()
 }
