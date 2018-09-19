@@ -226,13 +226,15 @@ kyso.getExploreStudies = async () =>
 
 
 kyso.getMainFile = async ({ versionId, token = null, apiUrl }) => {
-  handleRequest({
+  const res = await handleRequest({
     apiUrl,
     url: '/get-main-file',
     method: 'post',
     body: { versionId },
     token,
+    returnRaw: true
   })
+  return res.text()
 }
 
 kyso.getStudy = async ({ token, author, name, limit, sha, apiUrl }) =>
