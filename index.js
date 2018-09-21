@@ -225,13 +225,13 @@ kyso.deleteStudy = async ({ token, studyId, apiUrl }) =>
     body: { studyId }
   })
 
-kyso.getExploreStudies = async () =>
+kyso.getExploreStudies = async ({ page, limit, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: '/get-explore-studies',
     method: 'post',
+    body: { page, limit }
   })
-
 
 kyso.getMainFile = async ({ versionId, token = null, apiUrl }) => {
   const res = await handleRequest({
