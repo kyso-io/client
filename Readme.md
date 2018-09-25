@@ -145,6 +145,8 @@ Set the auth token for each call using `token: user.sessionToken`
     const study = await toggleStar({ token, studyId, privacy, apiUrl })
   ```
 
+### Comments
+
 - `createComment`
   ```javascript
     const comment = await createComment({ token, text, studyId, parentId, apiUrl })
@@ -154,6 +156,17 @@ Set the auth token for each call using `token: user.sessionToken`
   ```javascript
     const comments = await getComments({ studyId, parentId, apiUrl })
   ```
+
+- `editComment`
+  ```javascript
+    const comment = await editComment({ token, text, commentId, apiUrl })
+  ```
+
+- `deleteComment`
+  ```javascript
+    const comment = await deleteComment({ token, commentId, apiUrl })
+  ```
+  This simply removes the comment author from the comment, it still exists.
 
 ### Containers
 

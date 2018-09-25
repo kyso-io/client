@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kyso-io/kyso-client#readme",
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1",
+    "jsome": "^2.5.0"
   }
 }

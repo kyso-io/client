@@ -160,6 +160,7 @@ kyso.importGithubRepository = async ({ token, repo, main, branch, apiUrl }) =>
     body: { repo, main, branch }
   })
 
+// Comments
 
 kyso.createComment = async ({ token, text, studyId, parentId, apiUrl }) =>
   handleRequest({
@@ -168,6 +169,26 @@ kyso.createComment = async ({ token, text, studyId, parentId, apiUrl }) =>
     method: 'post',
     token,
     body: { text, studyId, parentId }
+  })
+
+
+kyso.deleteComment = async ({ token, commentId, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/delete-comment',
+    method: 'post',
+    token,
+    body: { commentId }
+  })
+
+
+kyso.editComment = async ({ token, text, commentId, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/edit-comment',
+    method: 'post',
+    token,
+    body: { text, commentId }
   })
 
 

@@ -56,6 +56,8 @@ module.exports = async ({
     } catch (e) {
       return null
     }
+  } else {
+    throw new Error(await response.text())
   }
   return response.text()
 }
