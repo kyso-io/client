@@ -254,6 +254,14 @@ kyso.getExploreStudies = async ({ page, limit, apiUrl }) =>
     body: { page, limit }
   })
 
+kyso.getRecentStudies = async ({ tags, page, limit, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/get-recent-studies',
+    method: 'post',
+    body: { page, limit, tags }
+  })
+
 kyso.getMainFile = async ({ versionId, token = null, apiUrl }) => {
   const res = await handleRequest({
     apiUrl,

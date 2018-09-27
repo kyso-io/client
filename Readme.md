@@ -100,9 +100,19 @@ Set the auth token for each call using `token: user.sessionToken`
 
 - `getExploreStudies`
   ```javascript
-    const studies = await kyso.getExploreStudies()
+    const studies = await kyso.getExploreStudies({ page, limit, apiUrl })
   ```
-  Returns a list of study objects
+  Returns a list of featured explore studies, limit the amount of studies with limit (default 12), and set the page
+  for which page of studies
+
+
+- `getRecentStudies`
+  ```javascript
+    const studies = await kyso.getRecentStudies({ tags, page, limit, apiUrl })
+  ```
+  Returns a list of recent studies, limit the amount of studies with limit (default 12), and set the page
+  for which page of studies, and filter by tags by setting the tags array (eg: tags=["machine-learning"])
+
 
 - `getMainFile`
   ```javascript
