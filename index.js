@@ -15,6 +15,19 @@ kyso.login = async ({ email, password, apiUrl }) =>
     returnRaw: true
   })
 
+kyso.logout = async ({ token, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: `/parse/logout`,
+    method: 'get',
+    headers: {
+      'X-Parse-Application-Id': 'api-kyso-io',
+      'X-Parse-Session-Token': token
+    },
+    returnRaw: true
+  })
+
+
 kyso.getMe = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
