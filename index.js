@@ -19,7 +19,7 @@ kyso.logout = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
     url: `/parse/logout`,
-    method: 'get',
+    method: 'post',
     headers: {
       'X-Parse-Application-Id': 'api-kyso-io',
       'X-Parse-Session-Token': token
