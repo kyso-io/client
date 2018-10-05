@@ -104,6 +104,49 @@ kyso.uploadProfilePicture = async ({ token, data, apiUrl }) =>
   })
 
 // Containers
+kyso.startContainer = async ({ token, containerId, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/start-container',
+    method: 'post',
+    token,
+    body: {
+      containerId
+    }
+  })
+
+kyso.createContainer = async ({ token, name, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/create-container',
+    method: 'post',
+    token,
+    body: {
+      name
+    }
+  })
+
+kyso.stopContainer = async ({ token, containerId, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/stop-container',
+    method: 'post',
+    token,
+    body: {
+      containerId
+    }
+  })
+
+kyso.deleteContainer = async ({ token, containerId, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/delete-container',
+    method: 'post',
+    token,
+    body: {
+      containerId
+    }
+  })
 
 kyso.getContainer = async ({ token, proxyUrl, containerId, apiUrl }) =>
   handleRequest({
@@ -124,6 +167,7 @@ kyso.getContainers = async ({ token, apiUrl }) =>
     token
   })
 
+// admin route
 kyso.getRunningContainers = async ({ token, apiUrl }) =>
   handleRequest({
     apiUrl,
@@ -132,6 +176,7 @@ kyso.getRunningContainers = async ({ token, apiUrl }) =>
     token
   })
 
+// admin route
 kyso.updateContainerActivity = async ({ token, proxyUrl, lastActivity, apiUrl }) =>
   handleRequest({
     apiUrl,
@@ -142,7 +187,6 @@ kyso.updateContainerActivity = async ({ token, proxyUrl, lastActivity, apiUrl })
   })
 
 // Email
-
 kyso.feedback = async ({ token, text, apiUrl }) =>
   handleRequest({
     apiUrl,
