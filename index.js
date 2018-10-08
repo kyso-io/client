@@ -186,6 +186,28 @@ kyso.updateContainerActivity = async ({ token, proxyUrl, lastActivity, apiUrl })
     body: { proxyUrl, lastActivity }
   })
 
+kyso.updateStudy = async ({ token, author, name, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/fork-study',
+    method: 'post',
+    token,
+    body: {
+      author, name, update: true
+    }
+  })
+
+kyso.forkStudy = async ({ token, author, name, apiUrl }) =>
+  handleRequest({
+    apiUrl,
+    url: '/fork-study',
+    method: 'post',
+    token,
+    body: {
+      author, name, update: false
+    }
+  })
+
 // Email
 kyso.feedback = async ({ token, text, apiUrl }) =>
   handleRequest({
